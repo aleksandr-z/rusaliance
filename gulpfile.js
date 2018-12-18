@@ -8,7 +8,7 @@ const rigger = require('gulp-rigger');
 const browser = require('browser-sync');
 
 gulp.task('sass', function(){
-	return gulp.src('app/**/style.scss')
+	return gulp.src('app/**/style.{scss,css}')
 	.pipe(sass())
 	.pipe(gulp.dest('public'))
 });
@@ -19,7 +19,7 @@ gulp.task('clear', function(){
 });
 
 gulp.task('copy', function(){
-	return gulp.src(['!css','!js', '!template'])
+	return gulp.src(['./app/**','!./app/css/**','!./app/js/**','!./app/template/**'])
 	.pipe(gulp.dest('public'))
 })
 
@@ -31,13 +31,14 @@ gulp.task('assets', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('app/css/*.*', gulp.series('sass'));
+	gulp.watch('app/template/*.html', gulp.series('assets'));
 });
 
 gulp.task('serve', function(){
 	browser.init({
 		server:'public',
 	});
-	browser.watch('public/**/*.*').on('change', browser.reload);
+	browser.watch(['public/**/*.*','public/*.*']).on('change', browser.reload);
 })
 
-gulp.task('dev', gulp.series('clear', gulp.parallel('sass', 'assets'), gulp.parallel('watch','serve')));
+gulp.task('dev', gulp.series('clear', gulp.parallel('sass', 'assets', 'copy'), gulp.parallel('watch','serve')));
