@@ -1,9 +1,8 @@
 header {
   background:$main_color linear-gradient($main_color, $main_color_gradient, $main_color) repeat scroll 0 0;
   padding-top:20px;
-  height: 150px;
   width: 100%;
-  position: absolute;
+  position: relative;
 
   .shadow {
     ul {
