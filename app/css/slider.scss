@@ -113,6 +113,10 @@ a.more{
 }
 #rot1 {
     img { 
-        width:100%;
+        min-width:100%;
+    }
+    h3 {
+    font-size:34px;
+    text-shadow:-1px 1px 1px #555;
     }
 }

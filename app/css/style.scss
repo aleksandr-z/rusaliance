@@ -1,5 +1,18 @@
-@import "main.scss";
+@import "all.scss";
 
-h1 {
-	color:black;
+.side-slider {
+	text-align:center;
+	border-top:1px solid gray;
+	border-bottom:1px solid gray;
+
+	img{
+		max-width:100%;
+		margin:0 auto;
+	}
+	button {
+		display:none;
+	}
+	.side-slider__item {
+		text-align:center;
+	}
 }

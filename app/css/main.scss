@@ -1,8 +1,43 @@
-@import "./../../node_modules/normalize.css/normalize.css";
-@import "./../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
-@import "./../../node_modules/bootstrap/scss/bootstrap-grid.scss";
-@import "_const.scss";
-@import "header.scss";
-@import "footer.scss";
-@import "slider.scss";
-
+.titleh3 {
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	background: $main_color none repeat scroll 0 0;
+	height: auto;
+	width: 100%;
+	text-align: center;
+}
+.news{
+	&__item {
+		text-align:justify;
+		clear:both;
+		p {
+			margin-bottom:4px;
+		}	
+		&-conf {
+			text-align:justify;
+			&:after {
+			width:100%;
+				content:"";
+				visibility:hidden;
+				display:inline-block;	
+			}
+		}
+		&-date {
+			display:inline-block;
+			color: #dcdcdc; 
+			font-style: italic;
+		}
+		&-more {
+			color: $main_color;
+			display:inline-block;
+			font-weight: bold;
+			transition: color 0.2s ease 0.02s;
+			&:hover {
+				color: $main_orange_color;
+				float: right;
+				font-weight: bold;
+			}
+		}
+	}
+}

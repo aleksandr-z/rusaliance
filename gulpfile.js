@@ -7,6 +7,8 @@ const cssmin = require('gulp-cssmin');
 const rigger = require('gulp-rigger');
 const browser = require('browser-sync');
 const uglify = require('gulp-uglify');
+//const minify = require('gulp-minify');
+
 
 gulp.task('sass', function(){
 	return gulp.src('app/**/style.{scss,css}')
