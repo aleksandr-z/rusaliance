@@ -37,6 +37,13 @@ header {
           color: black;
           text-decoration: none;
           padding: 18px 15px;
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          user-select: none;
+          width: 100%;
+          width: 100%;
+          display: inline-block;
+          box-sizing: border-box;
         }
         &:first-child{
             border-radius: 8px 0 0 8px;
