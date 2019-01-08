@@ -7,12 +7,15 @@ const cssmin = require('gulp-cssmin');
 const rigger = require('gulp-rigger');
 const browser = require('browser-sync');
 const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
 //const minify = require('gulp-minify');
 
 
 gulp.task('sass', function(){
 	return gulp.src('app/**/style.{scss,css}')
+	.pipe(sourcemaps.init())
 	.pipe(sass())
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('public'))
 });
 
